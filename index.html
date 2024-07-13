@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhyanam Pathak's Portfolio</title>
+  <!-- <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico" /> -->
+  <script src="./js/animation.js" defer></script>
+  <script src="./js/color-mode.js" defer></script>
+  <script src="./js/project-slideshow.js" defer></script>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/animation.css" />
+  <link rel="stylesheet" href="./css/color-mode.css" />
+</head>
+
+<body>
+
+  <div id="spider-man"></div>
+
+  <script>
+
+    // Ripple
+    window.addEventListener("click", ev => {
+      let ripple = document.createElement("div")
+      ripple.classList.add("ripple");
+      ripple.style.top = ev.clientY + "px";
+      ripple.style.left = ev.clientX + "px";
+      document.body.appendChild(ripple);
+      ripple.addEventListener("animationend", () => ripple.remove())
+    });
+
+
+// spidey
+      const sp = document.getElementById('spider-man');
+      const runningGif = './assets/spider-man/spider-man.gif';
+      const staticImage = './assets/spider-man/spi.png';
+
+      document.addEventListener('click', function (event) {
+        const clickX = event.clientX;
+        const clickY = event.clientY;
+
+        const spRect = sp.getBoundingClientRect();
+        const spX = spRect.left + spRect.width / 2;
+        const spY = spRect.top + spRect.height / 2;
+
+        const directionX = clickX - spX;
+        const directionY = clickY - spY;
+
+        const angle = Math.atan2(directionY, directionX);
+        const angleDegrees = angle * (180 / Math.PI);
+
+        sp.style.transform = `translate(-50%, -50%) rotate(${angleDegrees}deg) scaleX(-1)`;
+        sp.style.backgroundImage = `url(${runningGif})`;
+        movesp(clickX, clickY, angleDegrees);
+      });
+
+      function movesp(x, y, angleDegrees) {
+        sp.style.left = (x - 50) + 'px';
+        sp.style.top = (y - 50) + 'px';
+
+        setTimeout(() => {
+          sp.style.backgroundImage = `url(${staticImage})`;
+          sp.style.transform = `translate(-50%, -50%) rotate(${angleDegrees}deg) scaleX(-1)`; 
+        }, 1000);
+      }
+
+  </script>
+  
+<!-- <div id="toggle-but">
+<img class = "hello" src="../assets/icons/off.jpg">
+</div> -->
+<!-- hello is the size of this image -->
+  <div id="hero-intro">
+  <h5>Hey I'm</h5>
+  <h1>Dhyanam Pathak</h1>
+  <p>Computer Engineering Student</p>
+  </div>
+
+  <div id="hero">
+    <!-- photo maate che aa to -->
+    <!-- Block, Element, Modifier (BEM) naming convention-->
+    <div id="hero__animation">
+      <div id="hero__animation__img"></div>
+    </div>
+  </div>
+  <nav id="grid">
+    <div id="grid__tl">
+      <div id="grid__tl__btn">About</div>
+      <div id="grid__tl__content">
+        <div class="cards">
+
+          <div class="cards__content">
+            <article>
+              <img src="./assets/icons/resume.png" alt="Education icon" class="icon" />
+              <h2>Resume</h2>
+              <a href="assets/dhyanam-resume.pdf" download style="text-decoration: none;">
+                <p class="dwn">Download</p>
+              </a>
+            </article>
+          </div>
+
+          <div class="cards__content">
+            <article>
+              <img src="./assets/icons/quality.png" alt="Experience icon" class="icon" />
+              <h2>Experience</h2>
+              <p>
+                Internships in<br />
+                Web Development , 
+                AI/ML , 
+                Data Analytics.
+              </p>
+            </article>
+          
+          </div>
+          <div class="cards__content">
+            <article>
+              <img src="./assets/icons/graduation-cap.png" alt="Education icon" class="icon" />
+              <h2>Education</h2>
+              <p>B.E. Computer Engineering</p>
+              <p>8.8 CGPA - 9.02 CPI</p>
+            </article>
+            
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="grid__tr">
+      <div id="grid__tr__btn">Experience</div>
+      <div id="grid__tr__content">
+        <div class="cards experience">
+          <article class="experience__skill">
+
+            <h2>Frontend Development</h2>
+
+
+            <div>
+              <img src="./assets/icons/checkmark.png" alt="Checkmark icon" class="icon" />
+              <div>
+                <h2>JavaScript</h2>
+                <p>Intermediate</p>
+              </div>
+            </div>
+
+            <div>
+              <img src="./assets/icons/checkmark.png" alt="Checkmark icon" class="icon" />
+              <div>
+                <h2>React JS</h2>
+                <p>Intermediate</p>
+              </div>
+            </div>
+
+            <div>
+              <img src="./assets/icons/checkmark.png" alt="Checkmark icon" class="icon" />
+              <div>
+                <h2>Python</h2>
+                <p>Intermediate</p>
+              </div>
+            </div>
+
+            <div>
+              <img src="./assets/icons/checkmark.png" alt="Checkmark icon" class="icon" />
+              <div>
+                <h2>HTML-CSS</h2>
+                <p>Experienced</p>
+              </div>
+            </div>
+
+            <div>
+              <img src="./assets/icons/checkmark.png" alt="Checkmark icon" class="icon" />
+              <div>
+                <h2>Figma</h2>
+                <p>Intermediate</p>
+              </div>
+            </div>
+
+
+
+
+
+          </article>
+
+          <article class="experience__skill">
+
+            <h2>Backend Development</h2>
+
+            <div>
+              <img src="./assets/icons/checkmark.png" alt="Checkmark icon" class="icon" />
+              <div>
+                <h2>MongoDB</h2>
+                <p>Intermediate</p>
+              </div>
+            </div>
+
+            <div>
+              <img src="./assets/icons/checkmark.png" alt="Checkmark icon" class="icon" />
+              <div>
+                <h2>MySQL</h2>
+                <p>Intermediate</p>
+              </div>
+            </div>
+
+            <div>
+              <img src="./assets/icons/checkmark.png" alt="Checkmark icon" class="icon" />
+              <div>
+                <h2>NodeJS</h2>
+                <p>Experienced</p>
+              </div>
+            </div>
+
+            <div>
+              <img src="./assets/icons/checkmark.png" alt="Checkmark icon" class="icon" />
+              <div>
+                <h2>Express JS</h2>
+                <p>Basic</p>
+              </div>
+            </div>
+
+            <div>
+              <img src="./assets/icons/checkmark.png" alt="Checkmark icon" class="icon" />
+              <div>
+                <h2>GitHub</h2>
+                <p>Basic</p>
+              </div>
+            </div>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div id="grid__bl">
+      <div id="grid__bl__btn">Projects</div>
+      <div id="grid__bl__content">
+        <div id="grid__bl__content__projects">
+
+          <div class="project p-1">
+            <h2 class="project__title">Student Dropout Analysis in Higher Education</h2>
+            <p style="color: white;">A SSIP Hackathon Problem Statement</p>
+            <button class="btn" onclick="window.location.href='#'">
+              GitHub
+            </button>
+          </div>
+
+          <div class="project p-2">
+            <h2 class="project__title">ByteFetcher</h2>
+            <!-- <button class="btn" onclick="window.location.href='https://github.com/Dhyanam04/ByteFetcher'"> -->
+            <button class="btn" onclick="window.location.href='https://github.com/Dhyanam04/ByteFetcher'">
+              GitHub
+            </button>
+          </div>
+
+
+
+
+          <div class="project p-3">
+            <h2 class="project__title">CPU Scheduling Gantt Chart Generator</h2>
+
+            <!-- <button class="btn"
+              onclick="window.location.href='https://chromewebstore.google.com/detail/webpage-doodler/lbodekjfnafmhkbaegjapfimodhppepa'">
+              Demo
+            </button> -->
+            <button class="btn"
+              onclick="window.location.href='https://github.com/Dhyanam04/schedulling_algo'">
+              GitHub
+            </button>
+          </div>
+
+          <button class="arrow" onclick="navigateProject(-1)">
+            &#10094;
+          </button>
+          <button class="arrow" onclick="navigateProject(1)">&#10095;</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="grid__br">
+      <div id="grid__br__btn">Contact</div>
+      <div id="grid__br__content">
+        <h5 class="contact-text">Get In Touch</h5>
+        <h2 class="contact-text">Contact Me</h2>
+        <div>
+          <button style="border: 4px solid red;" class="btn btn-contact"
+            onclick="window.location.href='https://mailto:dhyanam464@gmail.com'">
+            Email
+          </button>
+          <button style="border: 4px solid rgb(65, 125, 237);" class="btn btn-contact"
+            onclick="window.location.href='https://www.linkedin.com/in/dhyanam-pathak-618097228/'">
+            LinkedIn
+          </button>
+          <button style="border: 4px solid rgb(192, 143, 18);" class="btn btn-contact"
+            onclick="window.location.href='https://leetcode.com/u/Dhyanam/'">
+            LeetCode
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div id="color-mode">
+    <!-- <div id="toggle-button" class="icon1"> -->
+    <!-- <div id="toggle-button" style="background-color: white; border-radius: 50px;"> -->
+      <img  id = "toggle-button" class = "hello" src="../assets/icons/off.jpg">
+    </div>
+  </div>
+</body>
+
+</html>
