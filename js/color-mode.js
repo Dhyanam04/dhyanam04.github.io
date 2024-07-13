@@ -35,9 +35,9 @@ function saveColorMode() {
 function updateToggleButton() {
   if (root.classList.contains("dark-mode")) {
     // toggleBut.style.backgroundImage = "var(--moon)";
-    toggleButton.src = '../assets/icons/off.jpg';
+    toggleButton.src = './assets/icons/off.jpg';
   } else {
     // toggleBut.style.backgroundImage = "var(--sun)";
-    toggleButton.src = '../assets/icons/on.jpg';
+    toggleButton.src = './assets/icons/on.jpg';
   }
 }
