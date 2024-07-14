@@ -1,4 +1,3 @@
-// Define DOM elements
 const toggleButton = document.querySelector("#toggle-button");
 // const toggleButton = document.querySelector("#toggle-but");
 // const toggleButton = document.getElementById("toggle-but");
@@ -34,10 +33,8 @@ function saveColorMode() {
 
 function updateToggleButton() {
   if (root.classList.contains("dark-mode")) {
-    // toggleBut.style.backgroundImage = "var(--moon)";
     toggleButton.src = './assets/icons/off.jpg';
   } else {
-    // toggleBut.style.backgroundImage = "var(--sun)";
     toggleButton.src = './assets/icons/on.jpg';
   }
 }
